@@ -38,9 +38,9 @@ while(True):
 		# predict if the current face has a mask
 		model_prediction = mask_model.predict(current_image.reshape(-1,160,160,3)) == mask_model.predict(current_image.reshape(-1,160,160,3)).max()
 		my_result = np.sum(mask_model.predict(current_image.reshape(-1,160,160,3)), axis = 0)
-		if my_result[0] >= my_result[1]:
+		if my_result[0] >= 4.0:
 			display_string = 'With Mask'
-		elif my_result[0] <= my_result[1]:
+		elif my_result[0] <= 4.0:
 			display_string = 'Without Mask'
 		cv2.putText(frame, display_string, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (36,255,12), 1)
 
