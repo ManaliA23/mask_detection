@@ -45,7 +45,7 @@ while(True):
 		cv2.putText(frame, display_string, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (36,255,12), 1)
 
 	# display the resulting frame
-	cv2.imshow('Webcam Live Face Mask Detection | Muzammil Behzad', frame)
+	cv2.imshow('Webcam Live Face Mask Detection', frame)
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break
 
